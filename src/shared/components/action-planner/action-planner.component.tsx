@@ -1,6 +1,6 @@
 import React from 'react'
-import Header from '../header/header.component'
-import ActionList from '../actions-list.component.tsx/action-list.component'
+import Header from './header/header.component'
+import ActionList from './actions-list.component.tsx/action-list.component'
 
 const ActionPlanner = () => {
     return (

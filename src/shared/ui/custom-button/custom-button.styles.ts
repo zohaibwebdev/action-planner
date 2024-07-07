@@ -1,7 +1,7 @@
 import { CustomButtonType, CustomButtonSize } from './custom-button.types'
 
 export const customButtonStyles = {
-    [CustomButtonType.PRIMARY]: 'bg-blue-700 text-white  shadow-md',
+    [CustomButtonType.PRIMARY]: 'bg-blue-700 text-white',
     [CustomButtonType.SECONDARY]: 'bg-gray-200 text-gray-400 font-bold',
     [CustomButtonType.DANGER]: 'bg-transparent border-red-700 text-red-700',
     [CustomButtonType.SUCCESS]: 'bg-transparent border-green-700 text-green-700',

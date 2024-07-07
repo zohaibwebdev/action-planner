@@ -1,7 +1,7 @@
 import CustomButton from '@/shared/ui/custom-button/custom-button.component'
 import { CustomButtonType, CustomButtonSize } from '@/shared/ui/custom-button/custom-button.types'
-import DeleteIcon from '@/shared/ui/icons/delete-icon'
-import EditIcon from '@/shared/ui/icons/edit-icon'
+import DeleteIcon from '@/shared/icons/delete-icon'
+import EditIcon from '@/shared/icons/edit-icon'
 import React from 'react'
 
 const ActionButtons = () => {
