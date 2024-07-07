@@ -1,11 +1,13 @@
 import React from 'react'
 import Header from '../header/header.component'
+import ActionList from '../actions-list.component.tsx/action-list.component'
 
 const ActionPlanner = () => {
     return (
-        <div className="bg-slate-200 min-h-[100vh] text-gray-900 flex justify-center">
-            <div className="py-10 px-3 border max-w-screen-md w-full">
+        <div className="min-h-[100vh] text-gray-900 flex justify-center">
+            <div className="py-10 px-3  max-w-screen-md w-full">
                 <Header />
+                <ActionList />
             </div>
         </div>
     )
