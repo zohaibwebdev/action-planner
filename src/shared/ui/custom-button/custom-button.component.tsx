@@ -1,5 +1,6 @@
 import React, { FC } from 'react'
-import { customButtonStyles, ICustomButton } from './custom-button.types'
+import { ICustomButton } from './custom-button.types'
+import { customButtonStyles } from './custom-button.styles'
 
 const CustomButton: FC<ICustomButton> = ({ children, type, onClick, isDisable, hidden }) => {
     if (hidden) {

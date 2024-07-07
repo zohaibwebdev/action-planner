@@ -7,10 +7,10 @@ import React from 'react'
 const ActionButtons = () => {
     return (
         <div className="flex items-center gap-5">
-            <CustomButton type={CustomButtonTypes.NORMAL}>
+            <CustomButton type={CustomButtonTypes.TRANSPARENT}>
                 <EditIcon size={24} color="black" />
             </CustomButton>
-            <CustomButton type={CustomButtonTypes.NORMAL}>
+            <CustomButton type={CustomButtonTypes.TRANSPARENT}>
                 <DeleteIcon size={24} color="red" />
             </CustomButton>
         </div>

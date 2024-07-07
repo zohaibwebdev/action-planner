@@ -6,6 +6,7 @@ const Header = () => {
     const handle = () => {
         console.log('click')
     }
+
     return (
         <div className="flex justify-between items-center">
             <h1 className="font-extrabold text-3xl">Action Planner</h1>
