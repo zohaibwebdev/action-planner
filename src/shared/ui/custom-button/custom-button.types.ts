@@ -5,7 +5,7 @@ export interface ICustomButton extends PropsWithChildren {
   onClick?: () => void
   isDisable?: boolean
   hidden?: boolean
-  size?: CustomButtonSize
+  size: CustomButtonSize
 }
 
 export enum CustomButtonType {
@@ -18,6 +18,7 @@ export enum CustomButtonType {
 }
 
 export enum CustomButtonSize {
+  XS = 'XS',
   SM = 'SM',
   MD = 'MD',
   LG = 'LG',
