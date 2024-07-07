@@ -10,7 +10,7 @@ const Header = () => {
         <div className="flex justify-between items-center">
             <h1 className="font-extrabold text-3xl">Action Planner</h1>
             <CustomButton type={CustomButtonTypes.PRIMARY} onClick={handle}>
-        + Add Action
+                <span className="text-xl mr-2">+</span>Add Action
             </CustomButton>
         </div>
     )
