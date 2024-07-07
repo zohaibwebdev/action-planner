@@ -1,10 +1,10 @@
 import CustomButton from '@/shared/ui/custom-button/custom-button.component'
 import { CustomButtonType, CustomButtonSize } from '@/shared/ui/custom-button/custom-button.types'
 import React from 'react'
-import ProgressCircle from '../progress-circle/progress-circle.component'
-import ActionButtons from '../action-planner-list-buttons/action-planner-list-buttons.component'
+import ProgressCircle from '../../progress-circle/progress-circle.component'
+import ActionButtons from '../action-planner-list-item-buttons/action-planner-list-item-buttons.component'
 
-const ActionList = () => {
+const ActionListItem = () => {
     return (
         <div className="w-full bg-white p-2 rounded-lg flex justify-around items-center mt-5">
             <div>
@@ -24,4 +24,4 @@ const ActionList = () => {
     )
 }
 
-export default ActionList
+export default ActionListItem
