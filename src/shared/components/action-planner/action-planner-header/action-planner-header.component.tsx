@@ -4,6 +4,7 @@ import CustomButton from '@/shared/ui/custom-button/custom-button.component'
 import { CustomButtonType, CustomButtonSize } from '@/shared/ui/custom-button/custom-button.types'
 import React, { useState } from 'react'
 import Modal from '../../modal/modal.component'
+import CustomInput from '@/shared/ui/custom-input/custom-input.component'
 
 const Header = () => {
     const [isModalOpen, setIsModalOpen] = useState<boolean>(false)
@@ -41,28 +42,16 @@ const Header = () => {
                         <CustomButton
                             size={CustomButtonSize.LG}
                             type={CustomButtonType.TRANSPARENT}
-                            classNames="text-black font-bold text-3xl"
+                            classNames="text-gray-700 font-bold text-3xl"
                             onClick={handleCloseModal}
                         >
-              &times;
+                            <span className="text-3xl font-extrabold text-black"> &times;</span>
                         </CustomButton>
                     </div>
-                    <div>
-                        <label htmlFor="actionInput" className="block text-sm font-medium text-gray-700">
-              Task
-                        </label>
-                        <input
-                            type="text"
-                            id="actionInput"
-                            value={action}
-                            onChange={(e) => setAction(e.target.value)}
-                            className="mt-1 block w-full p-2 border border-gray-300 rounded"
-                        />
-                    </div>
+                    <CustomInput changeEvent={(e) => setAction(e.target.value)} label="Task" />
                     <div className="flex flex-col gap-1">
-                        <p className="text-gray-400 font-light text-sm">Priority</p>
-                        <br />
-                        <div className="flex gap-3">
+                        <p className="text-gray-400 font-light text-sm ">Priority</p>
+                        <div className="flex gap-3 ">
                             <CustomButton
                                 type={CustomButtonType.DANGER}
                                 size={CustomButtonSize.SM}
@@ -86,14 +75,11 @@ const Header = () => {
                             </CustomButton>
                         </div>
                     </div>
-                    <CustomButton
-                        size={CustomButtonSize.SM}
-                        type={CustomButtonType.PRIMARY}
-                        classNames=""
-                        onClick={handleSaveAction}
-                    >
-            Add
-                    </CustomButton>
+                    <div className="flex justify-end">
+                        <CustomButton size={CustomButtonSize.SM} type={CustomButtonType.PRIMARY} onClick={handleSaveAction}>
+              Add
+                        </CustomButton>
+                    </div>
                 </div>
             </Modal>
         </div>

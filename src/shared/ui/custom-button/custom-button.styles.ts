@@ -3,9 +3,11 @@ import { CustomButtonType, CustomButtonSize } from './custom-button.types'
 export const customButtonStyles = {
     [CustomButtonType.PRIMARY]: 'bg-blue-700 text-white',
     [CustomButtonType.SECONDARY]: 'bg-gray-200 text-gray-400 font-bold',
-    [CustomButtonType.DANGER]: 'bg-transparent border border-red-700 text-red-700',
-    [CustomButtonType.SUCCESS]: 'bg-transparent border border-green-700 text-green-700',
-    [CustomButtonType.WARNING]: 'bg-transparent border border-yellow-600 text-yellow-600',
+    [CustomButtonType.DANGER]: 'bg-transparent border border-red-700 text-red-700 focus:bg-red-700 focus:text-white',
+    [CustomButtonType.SUCCESS]:
+    'bg-transparent border border-green-700 text-green-700 focus:bg-green-700 focus:text-white',
+    [CustomButtonType.WARNING]:
+    'bg-transparent border border-yellow-600 text-yellow-600 focus:bg-yellow-600 focus:text-white',
     [CustomButtonType.TRANSPARENT]: 'bg-transparent text-white',
 }
 

@@ -1,7 +1,7 @@
 export interface IActionPlannerContext {
   actions: Array<IActionPlannerList>
   addAction: (action: string, priority: priorityTypes) => void
-  editAction: (action: string, priority: priorityTypes) => void
+  editAction: (action: string, priority: priorityTypes, id: string) => void
   deleteAction: (id: string) => void
   updateProgress: (id: string, progress: progressTypes) => void
 }
