@@ -58,8 +58,23 @@ const ActionPlannerContainer: FC<PropsWithChildren> = ({ children }) => {
         }))
     }
 
+    function editAction(action: string, priority: priorityTypes, id: string) {
+        const actionIndex = state.actions.findIndex((action) => action.id === id)
+        if (actionIndex === -1) {
+            return
+        }
+        state.actions[actionIndex].action = action
+        state.actions[actionIndex].priority = priority
+        setState(function (prev) {
+            return {
+                ...prev,
+                actions: [...prev.actions],
+            }
+        })
+    }
+
     return (
-        <ActionPlannerProvider value={{ ...state, deleteAction, updateProgress, addAction }}>
+        <ActionPlannerProvider value={{ ...state, deleteAction, updateProgress, addAction, editAction }}>
             {children}
         </ActionPlannerProvider>
     )
