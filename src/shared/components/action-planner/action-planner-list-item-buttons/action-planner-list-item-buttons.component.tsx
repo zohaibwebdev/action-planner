@@ -1,7 +1,7 @@
 import CustomButton from '@/shared/ui/custom-button/custom-button.component'
 import { CustomButtonType, CustomButtonSize } from '@/shared/ui/custom-button/custom-button.types'
 import EditIcon from '@/shared/icons/edit-icon'
-import React, { FC, useState } from 'react'
+import React, { FC, useMemo, useState } from 'react'
 import { ActionButtonsProps } from './action-planner-list-item-buttons.types'
 import DeleteButton from './action-planner-delete-button.component'
 import Modal from '../../modal/modal.component'
@@ -10,10 +10,13 @@ import { priorityTypes } from '@/context/action-planner-context/action-planner-c
 import { useActionPlannerContext } from '@/context/action-planner-context/action-planner-context'
 
 const ActionButtons: FC<ActionButtonsProps> = ({ id }) => {
-    const [value, setValue] = useState('')
-    const [priority, setPriority] = useState<priorityTypes>(priorityTypes.LOW)
+    const { editAction, actions } = useActionPlannerContext()
+    const action = useMemo(() => {
+        return actions.find((action) => action.id === id)
+    }, [id, actions])
+    const [value, setValue] = useState<string>(action?.action || '')
+    const [priority, setPriority] = useState<priorityTypes>(action?.priority || priorityTypes.LOW)
     const [isModalOpen, setIsModalOpen] = useState<boolean>(false)
-    const { editAction } = useActionPlannerContext()
 
     const handleOpenModal = () => setIsModalOpen(true)
     const handleCloseModal = () => {
