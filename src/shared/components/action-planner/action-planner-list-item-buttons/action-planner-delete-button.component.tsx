@@ -22,7 +22,7 @@ const DeleteButton: FC<DeleteButtonProps> = ({ id }) => {
                 <DeleteIcon size={24} color="red" />
             </CustomButton>
             <Modal isOpen={isModalOpen} onClose={handleCloseModal}>
-                <div className="flex flex-col gap-5 items-center justify-center p-10">
+                <div className="flex flex-col gap-5 items-center justify-center p-10 max-w-[480px]">
                     <h1 className="font-bold text-2xl">are you sure that you want to delete this action</h1>
                     <div className="flex gap-10 justify-center">
                         <CustomButton size={CustomButtonSize.SM} type={CustomButtonType.PRIMARY} onClick={() => handleDelete(id)}>
