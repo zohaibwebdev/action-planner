@@ -8,7 +8,7 @@ const CustomButton: FC<ICustomButton> = ({ children, type, onClick, isDisable, h
     }
     return (
         <button
-            className={`${customButtonStyles[type]} ${customButtonSize[size]} ${classNames}`}
+            className={`${customButtonStyles[type]}  ${customButtonSize[size]} ${classNames}`}
             disabled={isDisable}
             onClick={() => onClick?.()}
         >

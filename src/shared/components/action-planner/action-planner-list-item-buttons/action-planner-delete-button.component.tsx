@@ -18,17 +18,17 @@ const DeleteButton: FC<DeleteButtonProps> = ({ id }) => {
 
     return (
         <>
-            <CustomButton type={CustomButtonType.TRANSPARENT} size={CustomButtonSize.XS} onClick={handleOpenModal}>
+            <CustomButton type={CustomButtonType.TRANSPARENT} size={CustomButtonSize.SP} onClick={handleOpenModal}>
                 <DeleteIcon size={24} color="red" />
             </CustomButton>
             <Modal isOpen={isModalOpen} onClose={handleCloseModal}>
-                <div className="flex flex-col gap-5 items-center justify-center p-10 max-w-[480px]">
-                    <h1 className="font-bold text-2xl">are you sure that you want to delete this action</h1>
+                <div className="flex flex-col gap-5 items-center justify-center p-10 max-w-[400px]">
+                    <h1 className="font-bold text-xl text-center">are you sure that you want to delete this action</h1>
                     <div className="flex gap-10 justify-center">
-                        <CustomButton size={CustomButtonSize.SM} type={CustomButtonType.PRIMARY} onClick={() => handleDelete(id)}>
+                        <CustomButton size={CustomButtonSize.MD} type={CustomButtonType.PRIMARY} onClick={() => handleDelete(id)}>
               Delete
                         </CustomButton>
-                        <CustomButton size={CustomButtonSize.SM} type={CustomButtonType.SUCCESS} onClick={handleCloseModal}>
+                        <CustomButton size={CustomButtonSize.MD} type={CustomButtonType.SUCCESS} onClick={handleCloseModal}>
               Cancel
                         </CustomButton>
                     </div>

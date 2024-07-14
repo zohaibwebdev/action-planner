@@ -23,4 +23,5 @@ export enum CustomButtonSize {
   SM = 'SM',
   MD = 'MD',
   LG = 'LG',
+  SP = 'SP',
 }

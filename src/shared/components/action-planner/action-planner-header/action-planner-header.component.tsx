@@ -36,7 +36,7 @@ const Header = () => {
                 <span className="text-xl mr-2">+</span>Add Action
             </CustomButton>
             <Modal isOpen={isModalOpen} onClose={handleCloseModal}>
-                <div className="flex flex-col gap-3">
+                <div className="flex flex-col gap-3 min-w-[550px] w-full px-10">
                     <div className="flex justify-between items-center ">
                         <h1 className="font-bold text-2xl">Add Action</h1>
                         <CustomButton
@@ -76,7 +76,7 @@ const Header = () => {
                         </div>
                     </div>
                     <div className="flex justify-end">
-                        <CustomButton size={CustomButtonSize.SM} type={CustomButtonType.PRIMARY} onClick={handleSaveAction}>
+                        <CustomButton size={CustomButtonSize.MD} type={CustomButtonType.PRIMARY} onClick={handleSaveAction}>
               Add
                         </CustomButton>
                     </div>

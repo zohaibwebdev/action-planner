@@ -25,7 +25,7 @@ const ActionListItem: FC<ActionListItemProps> = ({ action, id, priority, progres
     }
 
     function handleUpdateProgress() {
-        updateProgress(id, progress)
+        updateProgress(id, progress as progressTypes)
     }
 
     return (

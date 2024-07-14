@@ -14,19 +14,23 @@ const ActionButtons: FC<ActionButtonsProps> = ({ id }) => {
     const action = useMemo(() => {
         return actions.find((action) => action.id === id)
     }, [id, actions])
-    const [value, setValue] = useState<string>(action?.action || '')
+    const [actionDescription, setActionDescription] = useState<string>(action?.action || '')
     const [priority, setPriority] = useState<priorityTypes>(action?.priority || priorityTypes.LOW)
     const [isModalOpen, setIsModalOpen] = useState<boolean>(false)
 
-    const handleOpenModal = () => setIsModalOpen(true)
+    const handleOpenModal = () => {
+        setActionDescription(action?.action || '')
+        setPriority(action?.priority || priorityTypes.LOW)
+        setIsModalOpen(true)
+    }
+
     const handleCloseModal = () => {
         setIsModalOpen(false)
-        setValue('')
-        setPriority(priorityTypes.LOW)
     }
+
     const handleEdit = () => {
-        if (value.trim()) {
-            editAction(value, priority, id)
+        if (actionDescription.trim()) {
+            editAction(actionDescription, priority, id)
             handleCloseModal()
         }
     }
@@ -34,14 +38,14 @@ const ActionButtons: FC<ActionButtonsProps> = ({ id }) => {
     return (
         <>
             <div className="flex items-center gap-3">
-                <CustomButton type={CustomButtonType.TRANSPARENT} size={CustomButtonSize.XS} onClick={handleOpenModal}>
+                <CustomButton type={CustomButtonType.TRANSPARENT} size={CustomButtonSize.SP} onClick={handleOpenModal}>
                     <EditIcon size={24} color="black" />
                 </CustomButton>
                 <DeleteButton id={id} />
             </div>
             <Modal isOpen={isModalOpen} onClose={handleCloseModal}>
-                <div className="flex flex-col gap-3">
-                    <div className="flex justify-between items-center ">
+                <div className="flex flex-col gap-3 min-w-[500px] px-10">
+                    <div className="flex justify-between items-center">
                         <h1 className="font-bold text-2xl">Edit Action</h1>
                         <CustomButton
                             size={CustomButtonSize.LG}
@@ -52,10 +56,14 @@ const ActionButtons: FC<ActionButtonsProps> = ({ id }) => {
                             <span className="text-3xl font-extrabold text-black"> &times;</span>
                         </CustomButton>
                     </div>
-                    <CustomInput changeEvent={(e) => setValue(e.target.value)} label="Task" defaultValue={value} />
+                    <CustomInput
+                        changeEvent={(e) => setActionDescription(e.target.value)}
+                        label="Task"
+                        defaultValue={actionDescription}
+                    />
                     <div className="flex flex-col gap-1">
-                        <p className="text-gray-400 font-light text-sm ">Priority</p>
-                        <div className="flex gap-3 ">
+                        <p className="text-gray-400 font-light text-sm">Priority</p>
+                        <div className="flex gap-3">
                             <CustomButton
                                 type={CustomButtonType.DANGER}
                                 size={CustomButtonSize.SM}
@@ -80,7 +88,7 @@ const ActionButtons: FC<ActionButtonsProps> = ({ id }) => {
                         </div>
                     </div>
                     <div className="flex justify-end">
-                        <CustomButton size={CustomButtonSize.SM} type={CustomButtonType.PRIMARY} onClick={handleEdit}>
+                        <CustomButton size={CustomButtonSize.MD} type={CustomButtonType.PRIMARY} onClick={handleEdit}>
               Edit
                         </CustomButton>
                     </div>
